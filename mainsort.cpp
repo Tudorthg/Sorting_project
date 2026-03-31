@@ -35,13 +35,9 @@ int main() {
     f.close();
 
     int n = static_cast<int>(v.size());
-    if (n == 0) {
-        cerr << "No numbers to sort." << endl;
-        return 1;
-    }
-
     auto start = chrono::high_resolution_clock::now();
-    bubblesort(v);
+    selectionSort(v);
+    //bubblesort(v);
     auto end = chrono::high_resolution_clock::now();
 
     auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
